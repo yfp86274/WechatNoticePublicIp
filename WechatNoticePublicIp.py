@@ -9,7 +9,7 @@ from requests import get, __version__, post
 
 class WechatNoticePublicIp():
     def __init__(self, token, fileName):
-        self.__IpApiUrl = 'https://api.ipify.org?format=json'
+        self.__IpApiUrl = 'https://api.ipify.org/?format=json'
         self.__osVersionInfo = {
             'Linux': '%s' % (distro.id()),
             'Windows': '%s' % (win32_ver()[0]),
