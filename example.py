@@ -1,10 +1,16 @@
 import os
+import sys
 
 import WechatNoticePublicIp
 
 if __name__ == '__main__':
     noticeCheckIp = WechatNoticePublicIp.WechatNoticePublicIp('your token', 'your file name')
     ipText = noticeCheckIp.getPublicIp()
+    if ipText == "Bad Gateway":
+        print("website error: Bad Gateway.")
+        sys.exit()
+
+    print(f"IP is: {ipText}.")
     sendTitle = "your title"
     # 若存在文件
     if os.path.exists(noticeCheckIp.getFilePath()):
